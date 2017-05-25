@@ -10,13 +10,17 @@ window.onload = (function () {
     const articleBtn = document.getElementById('articles'),
             aboutBtn = document.getElementById('about'),
           contactBtn = document.getElementById('contact'),
-          navigation = document.querySelector('.navi'),
-            art_list = document.getElementById('test').children,
-            colorful = document.getElementsByClassName('colorful');
+          navigation = document.querySelector('.navi');
+            
 
-    //array of all hr's
-    const hr_array = document.getElementsByTagName('hr');
+    //Array constants
+    const hr_array = document.getElementsByTagName('hr'),
+          art_list = document.getElementById('test').children,
+          colorful = document.getElementsByClassName('colorful');
 
+
+
+    //MOUSEOVER FUNCtiONS
     aboutBtn.onmouseover = function () {
         navigation.style.background = 'var(--cool_blue)';
         for (let i = 0; i < colorful.length; i++) {
@@ -59,6 +63,13 @@ window.onload = (function () {
         }
         title.style.color = 'var(--dark_brown)';
     }
+
+
+
+
+
+
+    //ONCLICK FUNCTIONS UPPER NAV
     articleBtn.onclick = function () {
         //base transition duration will be .3s and increment by .2s
         let delay = .3;
@@ -76,6 +87,29 @@ window.onload = (function () {
             delay += .2;
         } 
     };
+    contactBtn.onclick = function () {
+        window.scroll({
+            top: window.scrollMaxY,
+            behavior: 'smooth'
+        });
+        // cnt.classList.toggle('contact-show');
+        // cnt.classList.toggle('contact-hide');
+    };
+    //bubbling by default
+    aboutBtn.onclick = function () {
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
+        document.getElementsByClassName('about')[0].classList.toggle('about-down');
+        document.getElementsByClassName('about')[0].classList.toggle('about-up')
+    };
+
+
+
+
+
+    //ONCLICK FUNCTIONS SCROLLING NAV
     scroll_art.onclick = function () {
         //base transition duration will be .3s and increment by .2s
         let delay = .3;
@@ -114,25 +148,13 @@ window.onload = (function () {
 
         cnt.classList.add('contact-show');
         cnt.classList.remove('contact-hide');
-    }
-    contactBtn.onclick = function () {
-        window.scroll({
-            top: window.scrollMaxY,
-            behavior: 'smooth'
-        });
-        // cnt.classList.toggle('contact-show');
-        // cnt.classList.toggle('contact-hide');
-    };
-    //bubbling by default
-    aboutBtn.onclick = function () {
-        window.scroll({
-            top: 0,
-            behavior: 'smooth'
-        });
-        document.getElementsByClassName('about')[0].classList.toggle('about-down');
-        document.getElementsByClassName('about')[0].classList.toggle('about-up')
     };
     
+    
+
+
+
+
 
 
     //Below are helper functions
