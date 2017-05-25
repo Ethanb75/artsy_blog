@@ -1,16 +1,27 @@
+//TODO:
+//----------------------
+//add glare if click on contact and already at page bottom
+//
+
+
+
+
 window.onload = (function () {
     const articleBtn = document.getElementById('articles'),
             aboutBtn = document.getElementById('about'),
           contactBtn = document.getElementById('contact'),
           navigation = document.querySelector('.navi'),
-            art_list = document.getElementById('test').children;
-            // art_list = document.getElementsByClassName('colorful');
+            art_list = document.getElementById('test').children,
+            colorful = document.getElementsByClassName('colorful');
 
     //array of all hr's
     const hr_array = document.getElementsByTagName('hr');
 
     aboutBtn.onmouseover = function () {
         navigation.style.background = 'var(--cool_blue)';
+        for (let i = 0; i < colorful.length; i++) {
+            colorful[i].style.background = 'var(--cool_blue)';
+        }
         for (let i = 0; i < hr_array.length; i++) {
             hr_array[i].style.borderBottomColor = '#4F636F';
         }
@@ -22,6 +33,9 @@ window.onload = (function () {
     contactBtn.onmouseover = function () {
         // navigation.style.background = '#009688';
         navigation.style.background = '#009688';
+        for (let i = 0; i < colorful.length; i++) {
+            colorful[i].style.background = '#009688';
+        }
         for (let i = 0; i < hr_array.length; i++) {
             // hr_array[i].style.borderBottomColor = '#074943';
             hr_array[i].style.borderBottomColor = '#074943';
@@ -34,6 +48,9 @@ window.onload = (function () {
     }
     articleBtn.onmouseover = function () {
         navigation.style.background = 'rosybrown';
+        for (let i = 0; i < colorful.length; i++) {
+            colorful[i].style.background = 'rosybrown';
+        }
         for (let i = 0; i < hr_array.length; i++) {
             hr_array[i].style.borderBottomColor = 'var(--dark_brown)';
         }
@@ -91,7 +108,7 @@ window.onload = (function () {
     };
     scroll_cnt.onclick = function () {
         window.scroll({
-            top: 771,
+            top: window.scrollMaxY,
             behavior: 'smooth'
         });
 
@@ -100,14 +117,18 @@ window.onload = (function () {
     }
     contactBtn.onclick = function () {
         window.scroll({
-            top: 771,
+            top: window.scrollMaxY,
             behavior: 'smooth'
         });
-
-        cnt.classList.toggle('contact-show');
-        cnt.classList.toggle('contact-hide');
+        // cnt.classList.toggle('contact-show');
+        // cnt.classList.toggle('contact-hide');
     };
+    //bubbling by default
     aboutBtn.onclick = function () {
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
         document.getElementsByClassName('about')[0].classList.toggle('about-down');
         document.getElementsByClassName('about')[0].classList.toggle('about-up')
     };

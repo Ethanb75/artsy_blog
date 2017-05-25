@@ -95,6 +95,9 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /*variables*/
+* {
+    font-family: 'Poppins', sans-serif;
+}
 :root {
     --dark_brown: #6F4A4A;
     --cool_blue: #5B7789;
@@ -158,10 +161,17 @@ body {
 }
 .bar a {
     color: whitesmoke;
+    transition: all .7s ease;
+    border-bottom: none;
 }
-.bar:hover {
+.bar a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid whitesmoke;
+    transition: all .7s ease;
+}
+/*.bar:hover {
     background: #F4675D;
-}
+}*/
 .bar-hide {
     opacity: 0;
     transform: translateX(-400px);
@@ -174,6 +184,7 @@ body {
     /*transition: all .4s ease-out;*/
 }
 .contact-form {
+    margin-top: 5rem;
     padding: 1rem;
     background: #009688;
     z-index: 100;
@@ -219,7 +230,7 @@ body {
     list-style: none;
     padding: 1rem;
     cursor: pointer;
-    background: rgba(15,15,15,1);
+    background: rosybrown;
 }
 .scroll-bar li:hover {
     opacity: .8;
