@@ -1,5 +1,4 @@
 var express = require('express');
-var mongoose = require('mongoose');
 var app = express();
 var uuidV4 = require('uuid/v4');
 var port = process.env.PORT || 3000;
@@ -13,18 +12,21 @@ var dataArr = [];
 
 
 //use this function to set the post
-function setPost () {
+function setPost (title, date) {
   var currentUUID = uuidV4();
   firebaseRef.child(`posts/${currentUUID}`).set({
     id: currentUUID,
-    title: 'newer Post',
-    date: '10/2/15',
+    title: title,
+    date: date,
     tags: ['frontend','code'],
     comments: ['wow cool', 'fun stuff'],
-    content: 'ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.'
+    content: 'ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam. ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.'
   });
 };
-// setPost();
+setPost('Wutang Nigga', '11/11/12');
+setPost('Covfefe-gate 2017', '6/1/2017');
+setPost('Meh?', '5/1/2010');
+setPost('Mount and Blade 2', '6/1/2017');
 firebaseRef.child('posts').once('value').then(function (snap) {
     
     // var test = JSON.stringify(snap.val());
@@ -49,20 +51,12 @@ firebaseRef.child('posts').once('value').then(function (snap) {
     });
   });
 //define routes
-var routes = './routes/index.js';
+// var routes = './routes/index.js';
 
 // //define middleware
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-
-
-//connect to mongoose
-// // var url = process.env.DATABASEURL || `mongodb://${process.env.USER}:${process.env.PASSWORD}@ds157621.mlab.com:57621/sassy_blog`;
-// var url = 'mongodb://$admin:Meh?@ds157621.mlab.com:57621/sassy_blog'
-// mongoose.connect(url, function(err){
-//     if (err) throw err; 
-// });
 
 
 app.get('/', function (req, res) {
