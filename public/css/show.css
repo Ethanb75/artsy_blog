@@ -1,0 +1,29 @@
+.content-show {
+  line-height: 2;
+  font-size: 16px;
+}
+.big {
+  padding: 2.6rem 2.6rem 3.6rem 2.6rem;
+  border: none;
+  color: whitesmoke;
+  transition: all .3s ease-out;
+  transform: translateY(1rem);
+}
+.big:hover {
+  transform: translateY(0rem);
+  transition: all .2s ease;
+  color: whitesmoke;
+}
+.big:nth-of-type(1) {
+  background: rosybrown;
+}
+.big:nth-of-type(2) {
+  background: burlywood;
+}
+.big:nth-of-type(2):hover {
+  /*background: #e6e6e6;*/
+}
+
+.big:nth-of-type(3) {
+  background: #009688;
+}

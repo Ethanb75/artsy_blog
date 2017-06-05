@@ -67,60 +67,43 @@
                       ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
                       ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.                    ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
                     </p> 
-                  </div>
-                  <div class="article">
-                    <h3>
-                        I'm an attention grabbing article header
-                    </h3>
-                    <hr class="hr_bold">
-                    <p>
-                      ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
-                      ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.                    ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
-                    </p> 
                   </div> -->
-                  <% dataArr.forEach(el => { %>
+                  <% for (let i = 0; i < dataArr.length; i++) { %>
+                    <% let el = dataArr[i] %>
                     <div class="article">
                       <h3>
                          <%= el.title %> <small> - <%= el.date %> </small>
                       </h3>
                       <hr class="hr_bold">
                       <p>
-                        ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
-                        ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.                    ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
+                        <%- el.content.substring(0, 350) %> . . .
                       </p>
                       <a href="/<%= el.id %>">Read More . . .</a> 
                     </div>
-                  <% }) %>
+                  <% }; %>
+                  <!-- <button id="loadmore" class="btn btn-default">Load More</button> -->
                 </div>
                 <div class="col-xs-3">
                     <div id="test">
+                    <% dataArr.forEach(el => { %>
                         <div class="bar bar-hide">
-                            <a id="starting_click" href="#">Click Me</a>
+                            <a href="/<%= el.id %>"><%= el.title %></a>
                         </div>
-                        <div class="bar bar-hide">
-                            <a href="#">Or Me</a>
-                        </div>
-                        <div class="bar bar-hide">
-                            <a href="#">Me Too</a>
-                        </div>
-                        <div class="bar bar-hide">
-                            <a href="#">More Links</a>
-                        </div>
-                        <div class="bar bar-hide">
-                            <a href="#">More Links</a>
-                        </div>
+                    <% }); %>
                     </div>
                 </div>
+                
             </div>
+            
          <!--Hiding contact form-->
             <div class="row">
-                <div id="cnt" class="col-xs-7 col-xs-offset-2 text-center contact-form colorful">
+                <div id="cnt" class="col-xs-7 col-xs-offset-2 contact-form colorful">
                     <h5>Send a Message</h5>
-                    <hr>
+                    <hr class="hr_bold">
                     <form action="">
                         <textarea id="textbox" type="text" placeholder="message me" class="textbox"></textarea>
                         <div style="display: block">
-                            <input type="submit">
+                            <input type="submit" class="btn btn-default">
                         </div>
                     </form>
                 </div>

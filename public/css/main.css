@@ -153,7 +153,9 @@ body {
     margin-right: 1.5rem;
     color: whitesmoke;
 }
-
+.navi li:hover {
+    border-bottom: 1px solid whitesmoke;
+}
 .content {
     padding: 0;
     z-index: 2;
@@ -162,6 +164,7 @@ body {
     padding: 2.3rem;
     background: whitesmoke;
     z-index: 2;
+
 }
 .bar {
     background: rosybrown;
@@ -224,6 +227,13 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+.contact-form textarea {
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    resize: none;
+}
 
 
 /*scroll navigation*/
@@ -245,6 +255,7 @@ body {
 }
 .scroll-bar li:hover {
     opacity: .8;
+    /*border-bottom: 1px solid whitesmoke;*/
 }
 .scroll-hide {
     opacity: 0;
@@ -253,6 +264,14 @@ body {
 .scroll-show {
     opacity: 1;
     transform: translateX(0px);
+}
+
+
+.btn {
+    border-radius: 0;
+}
+.colorful {
+    background: rosybrown;
 }
 
 
