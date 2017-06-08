@@ -68,7 +68,7 @@ app.get('/', function (req, res) {
 app.get('/:id', function (req, res) {
   
   firebaseRef.child(`posts/${req.params.id}`).once('value').then(function (snap) {
-    console.log(snap.val());
+    // console.log(snap.val());
     res.render('show', {data: snap.val()});
   });
 });
