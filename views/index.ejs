@@ -26,10 +26,10 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- todo: add a headline section with maybe a call to action that will flex center vert / horz -->
-                <div id="title" class="col-md-2 col-xs-offset-2 title-box">
+                <div id="title" class="col-xs-10 col-md-2 col-md-offset-2 title-box">
                      My blog. 
                 </div>
-                <div class="col-md-6 col-md-offset-2 colorful about about-down">
+                <div class="hidden-xs col-md-6 col-md-offset-2 colorful about about-down">
                     <h4>About Me:</h4>
                     <hr class="hr_bold">
                     <p>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 2rem">
-                <div class="col-xs-8 col-xs-offset-4 navi">
+                <div class="col-xs-9 col-xs-offset-3 navi">
                     <ul>
                         <li id="articles">Articles</li>
                         <li id="about">About</li>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="row">
-                <div id="scrollbar" class="col-xs-2 scroll-bar scroll-hide">
+                <div id="scrollbar" class="hidden-xs col-xs-2 scroll-bar scroll-hide">
                     <ul>
                         <li id="scroll_art" class="colorful">Articles</li>
                         <li id="scroll_abt" class="colorful">About</li>
@@ -56,17 +56,7 @@
                     </ul>
                 </div>
                 <!-- TODO: add marker for first post saying most recent -->
-                <div class="col-xs-offset-2 col-xs-7 content">
-                  <!--<div class="article">
-                    <h3>
-                        I'm an attention grabbing article header
-                    </h3>
-                    <hr class="hr_bold">
-                    <p>
-                      ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
-                      ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.                    ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi maiores ullam repellendus recusandae, suscipit aperiam nemo, blanditiis excepturi libero, nostrum enim possimus ipsam vero aliquam provident ipsa ut cum! Aperiam.
-                    </p> 
-                  </div> -->
+                <div class="col-xs-10 col-xs-offset-1 col-md-offset-2 col-md-7 content">
                   <% for (let i = 0; i < dataArr.length; i++) { %>
                     <% let el = dataArr[i] %>
                     <div class="article">
@@ -82,7 +72,7 @@
                   <% }; %>
                   <!-- <button id="loadmore" class="btn btn-default">Load More</button> -->
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-5 col-md-3">
                     <div id="test">
                     <% dataArr.forEach(el => { %>
                         <div class="bar bar-hide">
@@ -96,7 +86,7 @@
             
          <!--Hiding contact form-->
             <div class="row">
-                <div id="cnt" class="col-xs-7 col-xs-offset-2 contact-form colorful">
+                <div id="cnt" class="col-xs-12 contact-form colorful">
                     <h5>Send a Message</h5>
                     <hr class="hr_bold">
                     <form action="">

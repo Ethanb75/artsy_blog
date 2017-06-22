@@ -74,7 +74,6 @@ window.onload = (function () {
     articleBtn.onclick = function () {
         //base transition duration will be .3s and increment by .2s
         let delay = .3;
-
         //for the length of the items in the list module
         for (let i = 0; i < test.children.length; i++) {
             let current = test.children[i];
@@ -86,7 +85,8 @@ window.onload = (function () {
             current.classList.toggle('bar-hide');
             current.classList.toggle('bar-show');
             delay += .2;
-        } 
+        };
+        test.classList.toggle('zUp'); 
     };
     contactBtn.onclick = function () {
         window.scroll({
