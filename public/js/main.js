@@ -175,7 +175,7 @@ window.onload = (function () {
     });
     window.onscroll = function(e) {
         let bounds = navigation.getBoundingClientRect();
-        console.log(bounds.top);
+
         if (bounds.top < 0) {
             scrollbar.classList.remove('scroll-hide');
             scrollbar.classList.add('scroll-show');
@@ -183,5 +183,11 @@ window.onload = (function () {
            scrollbar.classList.add('scroll-hide');
            scrollbar.classList.remove('scroll-show');
         }
-    }
+
+        if (e.pageY < window.scrollMaxY - cntBounds[0].height) {
+            // console.log('less than!')
+        } else if (e.pageY > window.scrollMaxY - cntBounds[0].height) {
+            // console.log('greater than!')
+        }
+    };
 })();
