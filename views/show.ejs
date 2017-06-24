@@ -40,6 +40,8 @@
                         <li id="scroll_abt" class="colorful">About</li>
                     </ul>
                 </div> -->
+                <% let date = new Date() %>
+                <% date.setTime(data.date) %>
                 <div class="col-xs-offset-1 col-xs-11 col-sm-offset-2 col-sm-8 content-show">
                     <h2>
                         <%= data.title %>
@@ -47,7 +49,8 @@
                     </h2>
                     <hr class="hr_bold">
                     <p>
-                        <small> <%= data.date %> </small>
+                        <!-- <small> <%= data.date %> </small> -->
+                        <small><%- date.getMonth() + 1 %> / <%= date.getDate() %> / <%= date.getFullYear() %></small>
                     </p>
                     <article>
                        <%- data.content %>

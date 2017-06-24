@@ -184,10 +184,10 @@ window.onload = (function () {
            scrollbar.classList.remove('scroll-show');
         }
 
-        if (e.pageY < window.scrollMaxY - cntBounds[0].height) {
-            // console.log('less than!')
-        } else if (e.pageY > window.scrollMaxY - cntBounds[0].height) {
-            // console.log('greater than!')
-        }
+        // if (e.pageY < window.scrollMaxY - cntBounds[0].height) {
+        //     // console.log('less than!')
+        // } else if (e.pageY > window.scrollMaxY - cntBounds[0].height) {
+        //     // console.log('greater than!')
+        // }
     };
 })();

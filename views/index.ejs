@@ -59,9 +59,11 @@
                 <div class="col-xs-10 col-xs-offset-1 col-md-offset-2 col-md-7 content">
                   <% for (let i = 0; i < dataArr.length; i++) { %>
                     <% let el = dataArr[i] %>
+                    <% let date = new Date() %>
+                    <% date.setTime(el.date) %>
                     <div class="article">
                       <h3>
-                         <%= el.title %> <small> - <%= el.date %> </small>
+                         <%= el.title %> <small> - <%- date.getMonth() + 1 %> / <%= date.getDate() %> / <%= date.getFullYear() %> </small>
                       </h3>
                       <hr class="hr_bold">
                       <p>
@@ -87,14 +89,14 @@
          <!--Hiding contact form-->
             <div class="row">
                 <div id="cnt" class="col-xs-12 contact-form colorful">
-                    <h5>Send a Message</h5>
+                    <!-- <h5>Send a Message</h5>
                     <hr class="hr_bold">
                     <form action="">
                         <textarea id="textbox" type="text" placeholder="message me" class="textbox"></textarea>
                         <div style="display: block">
                             <input type="submit" class="btn btn-default">
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div> <!--end fluid container-->
