@@ -209,6 +209,7 @@ body {
     margin-top: 1rem;
     background: var(--cool_blue);
     transition: all .4s ease-out;
+    color: whitesmoke;
 }
 .about-down {
     transform: translateY(-200px);
