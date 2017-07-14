@@ -57,9 +57,10 @@
                 </div>
                 <!-- TODO: add marker for first post saying most recent -->
                 <div class="col-xs-10 col-xs-offset-1 col-md-offset-2 col-md-7 content">
+                  
                   <% for (let i = 0; i < dataArr.length; i++) { %>
-                    <% let el = dataArr[i] %>
-                    <% let date = new Date() %>
+                    <% var el = dataArr[i] %>
+                    <% var date = new Date() %>
                     <% date.setTime(el.date) %>
                     <div class="article">
                       <h3>

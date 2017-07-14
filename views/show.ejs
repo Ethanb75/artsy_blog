@@ -23,7 +23,6 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
         <div class="container-fluid">
             <div class="row rellax" data-rellax-speed="4">
                 <!-- todo: add a headline section with maybe a call to action that will flex center vert / horz -->
@@ -33,13 +32,6 @@
                 
             </div>
         <div class="row" style="margin-top: 2rem">
-            
-        <!-- <div class="row">
-                <div id="scrollbar" class="col-xs-2 scroll-bar scroll-hide">
-                    <ul>
-                        <li id="scroll_abt" class="colorful">About</li>
-                    </ul>
-                </div> -->
                 <% let date = new Date() %>
                 <% date.setTime(data.date) %>
                 <div class="col-xs-offset-1 col-xs-11 col-sm-offset-2 col-sm-8 content-show">
@@ -65,8 +57,8 @@
             <div class="row">
                 <div class="btn-group btn-group-justified" role="group" aria-label="..." style="margin-top: 4rem; overflow: hidden">
                     <a class="btn btn-default big" role="button" href="/"><< Go Back</a>
-                    <a class="btn btn-default big" role="button">Random Art</a>
-                    <a class="btn btn-default big" role="button">Next Art >></a>
+                    <a id="randomBtn" class="btn btn-default big" role="button">Random Art</a>
+                    <a id="nextBtn" class="btn btn-default big" role="button">Next Art >></a>
                 </div>
             </div>
              <!--end fluid container-->
@@ -77,6 +69,19 @@
         <script src="js/plugins.js"></script>
         <script src="js/vendor/rellax.js"></script>
         <script src="js/main.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAeYD2r0_Zv-mRIqCEHsHokMoEhpbx31vM",
+                authDomain: "blogtrial-48abb.firebaseapp.com",
+                databaseURL: "https://blogtrial-48abb.firebaseio.com",
+                projectId: "blogtrial-48abb",
+                storageBucket: "blogtrial-48abb.appspot.com",
+                messagingSenderId: "519267378031"
+            };
+            firebase.initializeApp(config);
+        </script>
         <script src="js/show.js"></script>
         <script>
             var rellax = new Rellax('.rellax');

@@ -26,16 +26,14 @@ function setPost (title, date) {
 };
 var tango = new Date();
 tango = tango.getTime();
-setPost('AAA', tango);
+// setPost('AAA', tango);
 
 firebaseRef.child('posts').once('value').then(function (snap) {
     
-    // var test = JSON.stringify(snap.val());
-    // test = JSON.parse(test);
-    var test = snap.val();
+    var val = snap.val();
     // console.log(Object.keys(test));
     
-    Object.keys(test).forEach(el => {
+    Object.keys(val).forEach(el => {
       firebaseRef.child(`posts/${el}`).once('value').then(function (snap) {
         var current = snap.val();
         dataArr.push({
@@ -71,9 +69,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:id', function (req, res) {
-  
   firebaseRef.child(`posts/${req.params.id}`).once('value').then(function (snap) {
-    // console.log(snap.val());
+    
     res.render('show', {data: snap.val()});
   });
 });
