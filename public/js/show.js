@@ -11,7 +11,6 @@ firebase.database().ref('posts').once('value').then(snap => {
 
   randomBtn.onclick = function () {
     let posts = localStorage.getItem('otherPosts').split(',');
-    console.log(posts[Math.abs(Math.floor(Math.random() * posts.length))])
     window.location.pathname = posts[Math.abs(Math.floor(Math.random() * posts.length))]
 
   }
