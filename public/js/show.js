@@ -8,10 +8,29 @@ firebase.database().ref('posts').once('value').then(snap => {
 
 (function (doc) {
   let randomBtn = doc.getElementById('randomBtn');
+  let nextBtn = doc.getElementById('nextBtn');
+  let posts = localStorage.getItem('otherPosts').split(',');
+  
 
-  randomBtn.onclick = function () {
-    let posts = localStorage.getItem('otherPosts').split(',');
-    window.location.pathname = posts[Math.abs(Math.floor(Math.random() * posts.length))]
+  nextBtn.onclick = function () {
+    let pathname = location.pathname;
+    let current = pathname.slice(1, pathname.length);
+    let index = posts.findIndex(el => {
+      return el === current
+    });
 
+    if (index + 1 === posts.length) {
+      index++;
+      index -= posts.length;
+    } else {
+      index++;
+    }
+
+    console.log(index);
+
+    window.location.pathname = posts[index]
   }
+
+  randomBtn.onclick = () => window.location.pathname = posts[Math.abs(Math.floor(Math.random() * posts.length))]
+  
 }(document))
