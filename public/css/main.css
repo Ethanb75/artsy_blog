@@ -95,6 +95,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /*variables*/
+/*resets*/
+blockquote {
+    color: rgba(0, 0, 0, .6);
+}
+
 * {
     font-family: 'Poppins', sans-serif;
 }
