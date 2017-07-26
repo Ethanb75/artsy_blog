@@ -238,6 +238,18 @@ body {
     z-index: 1000;
 }
 
+.icons {
+    text-align: center;
+}
+
+.icons ul {
+    list-style: none;
+    padding: 0;
+}
+.icons li {
+    display: inline;
+}
+
 .about-down {
     transform: translateY(-300px);
 }
