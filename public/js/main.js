@@ -3,6 +3,17 @@
 //add glare if click on contact and already at page bottom
 //
 
+function toggleContact () {
+    let cnt = document.getElementById('cnt');
+    if (cnt.classList.contains('showing')) {
+        cnt.style.transform = `translateX(${cnt.clientWidth + 25}px)`;
+        cnt.classList.remove('showing')
+    } else {
+        cnt.style.transform = 'translateX(0px)';
+        cnt.classList.add('showing')
+    }
+}
+
 
 
 
@@ -89,12 +100,13 @@ window.onload = (function () {
         test.classList.toggle('zUp'); 
     };
     contactBtn.onclick = function () {
-        window.scroll({
-            top: window.scrollMaxY,
-            behavior: 'smooth'
-        });
-        // cnt.classList.toggle('contact-show');
-        // cnt.classList.toggle('contact-hide');
+        // window.scroll({
+        //     top: window.scrollMaxY,
+        //     behavior: 'smooth'
+        // });
+
+        //scroll out from left the width of the element
+        return toggleContact();
     };
     //bubbling by default
     aboutBtn.onclick = function () {
@@ -147,17 +159,8 @@ window.onload = (function () {
         document.getElementsByClassName('about')[0].classList.add('about-up')
     };
     scroll_cnt.onclick = function () {
-        try {
-            window.scroll({
-            top: window.scrollMaxY,
-            behavior: 'smooth'
-        });
-        } catch (error) {
-            
-        }
-
-        cnt.classList.add('contact-show');
-        cnt.classList.remove('contact-hide');
+    
+        return toggleContact();
     };
     
     
