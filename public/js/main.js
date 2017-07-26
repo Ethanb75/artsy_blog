@@ -98,12 +98,16 @@ window.onload = (function () {
     };
     //bubbling by default
     aboutBtn.onclick = function () {
+        let aboutArea = document.getElementsByClassName('about')[0];
+        
         window.scroll({
             top: 0,
             behavior: 'smooth'
         });
-        document.getElementsByClassName('about')[0].classList.toggle('about-down');
-        document.getElementsByClassName('about')[0].classList.toggle('about-up')
+        
+
+        aboutArea.classList.toggle('about-down');
+        aboutArea.classList.toggle('about-up');
     };
 
 
