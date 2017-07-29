@@ -99,6 +99,18 @@ textarea {
 blockquote {
     color: rgba(0, 0, 0, .6);
     padding: 10px 0px 10px 12px;
+    font-size: 1.4rem;
+}
+
+label {
+    font-weight: 100;
+    color: rgba(0,0,0,.4)
+}
+
+article {
+    line-height: 1.58;
+    letter-spacing: -.003rem;
+    font-size: 1.5rem;
 }
 
 * {
@@ -241,10 +253,6 @@ body {
     z-index: 1000;
 }
 
-.icons {
-    text-align: center;
-}
-
 .icons ul {
     list-style: none;
     padding: 0;
@@ -279,6 +287,12 @@ body {
     color: rgba(0, 0, 0, .6);
 }
 
+.contact-form input[type="text"] {
+    color: rgba(0, 0, 0, .6);
+    background: whitesmoke;
+    border: none;
+    padding: .5rem;
+} 
 
 /*scroll navigation*/
 .scroll-bar {

@@ -3,6 +3,8 @@
 //add glare if click on contact and already at page bottom
 //
 
+let cnt = document.getElementById('cnt');
+
 function toggleContact () {
     let cnt = document.getElementById('cnt');
     if (cnt.classList.contains('showing')) {
