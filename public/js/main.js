@@ -4,6 +4,19 @@
 //
 
 let cnt = document.getElementById('cnt');
+let cntCloseIcon = document.querySelector('#cnt > i');
+let aboutCloseIcon = document.querySelector('.about > i');
+
+const articleBtn = document.getElementById('articles'),
+            aboutBtn = document.getElementById('about'),
+          contactBtn = document.getElementById('contact'),
+          navigation = document.querySelector('.navi');
+            
+
+    //Array constants
+    const hr_array = document.getElementsByTagName('hr'),
+          art_list = document.getElementById('test').children,
+          colorful = document.getElementsByClassName('colorful');
 
 function toggleContact () {
     let cnt = document.getElementById('cnt');
@@ -16,154 +29,109 @@ function toggleContact () {
     }
 }
 
+function toggleAbout () {
+    let aboutArea = document.getElementsByClassName('about')[0];
+        
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    aboutArea.classList.toggle('about-down');
+    aboutArea.classList.toggle('about-up');
+}
+
+function toggleArticles () {
+    //base transition duration will be .3s and increment by .2s
+    let delay = .3;
+    //for the length of the items in the list module
+    for (let i = 0; i < test.children.length; i++) {
+        let current = test.children[i];
+        
+        //Set the transition properties using the delay variable
+        current.style.transition = `all ${delay}s ease-out`;
+        
+        //toggle the class to hide or show the current list item and increment the delay before moving along
+        current.classList.toggle('bar-hide');
+        current.classList.toggle('bar-show');
+        delay += .2;
+    };
+    test.classList.toggle('zUp'); 
+}
+
+function colorPage (color1, color2) {
+    navigation.style.background = color1;
+    for (let i = 0; i < colorful.length; i++) {
+        colorful[i].style.background = color1;
+    }
+    for (let i = 0; i < hr_array.length; i++) {
+        hr_array[i].style.borderBottomColor = color2;
+    }
+    for (let z = 0; z < art_list.length; z++) {
+        art_list[z].style.background = color1;
+    }
+    title.style.color = color2;
+}
 
 
-
-window.onload = (function () {
-    const articleBtn = document.getElementById('articles'),
-            aboutBtn = document.getElementById('about'),
-          contactBtn = document.getElementById('contact'),
-          navigation = document.querySelector('.navi');
-            
-
-    //Array constants
-    const hr_array = document.getElementsByTagName('hr'),
-          art_list = document.getElementById('test').children,
-          colorful = document.getElementsByClassName('colorful');
 
 
 
     //MOUSEOVER FUNCtiONS
-    //do hr first b/c it's easy
-    aboutBtn.onmouseover = function () {
-        navigation.style.background = 'var(--cool_blue)';
-        for (let i = 0; i < colorful.length; i++) {
-            colorful[i].style.background = 'var(--cool_blue)';
-        }
-        for (let i = 0; i < hr_array.length; i++) {
-            hr_array[i].style.borderBottomColor = '#4F636F';
-        }
-        for (let z = 0; z < art_list.length; z++) {
-            art_list[z].style.background = 'var(--cool_blue)'
-        }
-        title.style.color = '#4F636F';
-    }
-    contactBtn.onmouseover = function () {
-        // navigation.style.background = '#009688';
-        navigation.style.background = '#009688';
-        for (let i = 0; i < colorful.length; i++) {
-            colorful[i].style.background = '#009688';
-        }
-        for (let i = 0; i < hr_array.length; i++) {
-            // hr_array[i].style.borderBottomColor = '#074943';
-            hr_array[i].style.borderBottomColor = '#074943';
-        }
-        for (let z = 0; z < art_list.length; z++) {
-            art_list[z].style.background = '#009688'
-        }
-        // title.style.color = '#074943';
-        title.style.color = '#074943';
-    }
-    articleBtn.onmouseover = function () {
-        navigation.style.background = 'rosybrown';
-        for (let i = 0; i < colorful.length; i++) {
-            colorful[i].style.background = 'rosybrown';
-        }
-        for (let i = 0; i < hr_array.length; i++) {
-            hr_array[i].style.borderBottomColor = 'var(--dark_brown)';
-        }
-        for (let z = 0; z < art_list.length; z++) {
-            art_list[z].style.background = 'rosybrown'
-        }
-        title.style.color = 'var(--dark_brown)';
-    };
+    aboutBtn.onmouseover = () => colorPage('var(--cool_blue)', '#4F636F');
+
+    contactBtn.onmouseover = () => colorPage('#009688', '#074943');
+    // contactBtn.onmouseover = function () {
+    //     navigation.style.background = '#009688';
+    //     for (let i = 0; i < colorful.length; i++) {
+    //         colorful[i].style.background = '#009688';
+    //     }
+    //     for (let i = 0; i < hr_array.length; i++) {
+    //         hr_array[i].style.borderBottomColor = '#074943';
+    //     }
+    //     for (let z = 0; z < art_list.length; z++) {
+    //         art_list[z].style.background = '#009688'
+    //     }
+    //     title.style.color = '#074943';
+    // }
+
+    articleBtn.onmouseover = () => colorPage('rosybrown', 'var(--dark_brown)');
+    // articleBtn.onmouseover = function (color1) {
+    //     navigation.style.background = 'rosybrown';
+    //     for (let i = 0; i < colorful.length; i++) {
+    //         colorful[i].style.background = 'rosybrown';
+    //     }
+    //     for (let i = 0; i < hr_array.length; i++) {
+    //         hr_array[i].style.borderBottomColor = 'var(--dark_brown)';
+    //     }
+    //     for (let z = 0; z < art_list.length; z++) {
+    //         art_list[z].style.background = 'rosybrown'
+    //     }
+    //     title.style.color = 'var(--dark_brown)';
+    // };
 
 
 
 
 
 
-    //ONCLICK FUNCTIONS UPPER NAV
-    articleBtn.onclick = function () {
-        //base transition duration will be .3s and increment by .2s
-        let delay = .3;
-        //for the length of the items in the list module
-        for (let i = 0; i < test.children.length; i++) {
-            let current = test.children[i];
-            
-            //Set the transition properties using the delay variable
-            current.style.transition = `all ${delay}s ease-out`;
-            
-            //toggle the class to hide or show the current list item and increment the delay before moving along
-            current.classList.toggle('bar-hide');
-            current.classList.toggle('bar-show');
-            delay += .2;
-        };
-        test.classList.toggle('zUp'); 
-    };
-    contactBtn.onclick = function () {
-        // window.scroll({
-        //     top: window.scrollMaxY,
-        //     behavior: 'smooth'
-        // });
-
-        //scroll out from left the width of the element
-        return toggleContact();
-    };
-    //bubbling by default
-    aboutBtn.onclick = function () {
-        let aboutArea = document.getElementsByClassName('about')[0];
-        
-        window.scroll({
-            top: 0,
-            behavior: 'smooth'
-        });
-        
-
-        aboutArea.classList.toggle('about-down');
-        aboutArea.classList.toggle('about-up');
-    };
+    //event listeners for header nav
+    articleBtn.onclick = () => toggleArticles();
+    contactBtn.onclick = () => toggleContact();
+    aboutBtn.onclick = () => toggleAbout();
 
 
 
 
 
-    //ONCLICK FUNCTIONS SCROLLING NAV
-    scroll_art.onclick = function () {
-        //base transition duration will be .3s and increment by .2s
-        let delay = .3;
+    // event listeners for scrolling nav
+    scroll_art.onclick = () => toggleArticles();
+    scroll_abt.onclick = () => toggleAbout();
+    scroll_cnt.onclick = () => toggleContact();
 
-        //scroll up first
-        document.getElementsByClassName('navi')[0].scrollIntoView({
-            behavior: 'smooth'
-        });
-        //for the length of the items in the list module
-        for (let i = 0; i < test.children.length; i++) {
-            let current = test.children[i];
-            
-            //Set the transition properties using the delay variable
-            current.style.transition = `all ${delay}s ease-out`;
-            
-            //toggle the class to hide or show the current list item and increment the delay before moving along
-            current.classList.remove('bar-hide');
-            current.classList.add('bar-show');
-            delay += .2;
-        } 
-    };
-    scroll_abt.onclick = function () {
-        window.scroll({
-            top: 0,
-            behavior: 'smooth'
-        });
-        
-
-        document.getElementsByClassName('about')[0].classList.remove('about-down');
-        document.getElementsByClassName('about')[0].classList.add('about-up')
-    };
-    scroll_cnt.onclick = function () {
-    
-        return toggleContact();
-    };
+    // close About and Contact icons
+    cntCloseIcon.onclick = () => toggleContact();
+    aboutCloseIcon.onclick = () => toggleAbout();
     
     
 
@@ -199,4 +167,3 @@ window.onload = (function () {
         //     // console.log('greater than!')
         // }
     };
-})();
