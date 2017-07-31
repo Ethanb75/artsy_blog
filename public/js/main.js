@@ -2,15 +2,13 @@
 //----------------------
 //add glare if click on contact and already at page bottom
 //
-
-let cnt = document.getElementById('cnt');
-let cntCloseIcon = document.querySelector('#cnt > i');
-let aboutCloseIcon = document.querySelector('.about > i');
-
-const articleBtn = document.getElementById('articles'),
-            aboutBtn = document.getElementById('about'),
-          contactBtn = document.getElementById('contact'),
-          navigation = document.querySelector('.navi');
+let aboutCloseIcon = document.querySelector('.about > i'),
+               cnt = document.getElementById('cnt'),
+      cntCloseIcon = document.querySelector('#cnt > i'),
+        articleBtn = document.getElementById('articles'),
+          aboutBtn = document.getElementById('about'),
+        contactBtn = document.getElementById('contact'),
+        navigation = document.querySelector('.navi');
             
 
     //Array constants
@@ -77,41 +75,10 @@ function colorPage (color1, color2) {
 
 
 
-    //MOUSEOVER FUNCtiONS
+    //mouseover functions
     aboutBtn.onmouseover = () => colorPage('var(--cool_blue)', '#4F636F');
-
     contactBtn.onmouseover = () => colorPage('#009688', '#074943');
-    // contactBtn.onmouseover = function () {
-    //     navigation.style.background = '#009688';
-    //     for (let i = 0; i < colorful.length; i++) {
-    //         colorful[i].style.background = '#009688';
-    //     }
-    //     for (let i = 0; i < hr_array.length; i++) {
-    //         hr_array[i].style.borderBottomColor = '#074943';
-    //     }
-    //     for (let z = 0; z < art_list.length; z++) {
-    //         art_list[z].style.background = '#009688'
-    //     }
-    //     title.style.color = '#074943';
-    // }
-
     articleBtn.onmouseover = () => colorPage('rosybrown', 'var(--dark_brown)');
-    // articleBtn.onmouseover = function (color1) {
-    //     navigation.style.background = 'rosybrown';
-    //     for (let i = 0; i < colorful.length; i++) {
-    //         colorful[i].style.background = 'rosybrown';
-    //     }
-    //     for (let i = 0; i < hr_array.length; i++) {
-    //         hr_array[i].style.borderBottomColor = 'var(--dark_brown)';
-    //     }
-    //     for (let z = 0; z < art_list.length; z++) {
-    //         art_list[z].style.background = 'rosybrown'
-    //     }
-    //     title.style.color = 'var(--dark_brown)';
-    // };
-
-
-
 
 
 

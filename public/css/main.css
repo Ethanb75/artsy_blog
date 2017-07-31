@@ -99,18 +99,18 @@ textarea {
 blockquote {
     color: rgba(0, 0, 0, .6);
     padding: 10px 0px 10px 12px;
-    font-size: 1.4rem;
+    font-size: 1.15rem;
 }
 
 label {
     font-weight: 100;
-    color: rgba(0,0,0,.4)
+    color: rgba(245, 245, 245, .46);
 }
 
 article {
     line-height: 1.58;
     letter-spacing: -.003rem;
-    font-size: 1.5rem;
+    font-size: 1.32rem;
 }
 
 * {
@@ -243,9 +243,10 @@ body {
     transition: all .4s ease-out;
     color: whitesmoke;
     transform: translateX(500px);
+    min-width: 320px;
 }
 
-.contact-form > i {
+.contact-form > i, .about > i {
     cursor: pointer;
 }
 
@@ -259,7 +260,16 @@ body {
 }
 
 .icons {
-    margin-top: 1rem;
+    margin-top: 1.23rem;
+}
+
+.icons a {
+    color: whitesmoke;
+}
+
+.icons a:hover, .icons a:active {
+    text-decoration: none;
+    color: rgba(0, 0, 60, .6)
 }
 
 .icons ul {
@@ -293,6 +303,10 @@ body {
 
 .contact-form label {
     display: block;
+}
+
+.contact-form label:nth-of-type(2) {
+    margin-top: .65rem;
 }
 
 .contact-form textarea {
