@@ -24,8 +24,13 @@ let aboutCloseIcon = document.querySelector('.about > i'),
 // flash thanks ( ͡° ͜ʖ ͡°)
 function flashThanks () {
     thanksBox.classList.toggle('showThanks');
+    
     setTimeout(() => {
-       thanksBox.classList.toggle('showThanks');
+        return toggleContact();
+    }, 500);
+
+    setTimeout(() => {
+       return thanksBox.classList.toggle('showThanks');
     }, 2000)
 }
 
