@@ -8,6 +8,8 @@ let aboutCloseIcon = document.querySelector('.about > i'),
         articleBtn = document.getElementById('articles'),
           aboutBtn = document.getElementById('about'),
         contactBtn = document.getElementById('contact'),
+       messageForm = document.querySelector('#cnt > form'),
+         thanksBox = document.querySelector('.thanks'),
         navigation = document.querySelector('.navi');
             
 
@@ -15,6 +17,30 @@ let aboutCloseIcon = document.querySelector('.about > i'),
     const hr_array = document.getElementsByTagName('hr'),
           art_list = document.getElementById('test').children,
           colorful = document.getElementsByClassName('colorful');
+    
+    //firebase
+    let messageListRef = firebase.database().ref('/messages');
+
+// flash thanks ( ͡° ͜ʖ ͡°)
+function flashThanks () {
+    thanksBox.classList.toggle('showThanks');
+    setTimeout(() => {
+       thanksBox.classList.toggle('showThanks');
+    }, 2000)
+}
+
+function postMessage (message, nickname) {
+    let time = new Date().getTime();
+
+    let newPostRef = messageListRef.push();
+    newPostRef.set({
+        message,
+        nickname,
+        time
+    });
+
+    return flashThanks();
+}
 
 function toggleContact () {
     let cnt = document.getElementById('cnt');
@@ -100,8 +126,21 @@ function colorPage (color1, color2) {
     cntCloseIcon.onclick = () => toggleContact();
     aboutCloseIcon.onclick = () => toggleAbout();
     
-    
 
+    //message form listener
+    messageForm.onsubmit = (event) => {
+        event.preventDefault();
+
+        let message = event.target.children[3].value;
+        let name = event.target.children[1].value;
+
+        //set to null
+        event.target.children[3].value = '';
+        event.target.children[1].value = '';
+
+
+        return postMessage(message, name);
+    }
 
 
 

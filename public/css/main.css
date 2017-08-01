@@ -385,15 +385,48 @@ footer {
     color: whitesmoke;
 }
 
+.thanks {
+    background: darkcyan;
+    color: whitesmoke;
+    position: fixed;
+    left: 10px;
+    top: 20vh;
+    transition: all .6s ease-out;
+    transform: translateX(-1000px);
+    z-index: 10000;
+    padding: 1rem;
+}
 
+.showThanks {
+    transform: translateX(0);
+    transition: all .6s ease-out;
+}
 
 @media (max-width: 750px) {
+    .thanks {
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    
     .contact-form {
         width: 100%;
         height: 100%;
         bottom: 0;
         display: flex;
         flex-direction: column;
+    }
+
+    .contact-form > h5 {
+        font-size: 1.3rem;
+    }
+
+    .contact-form > hr {
+        margin-top: 0;
     }
 
     .contact-form > form {
