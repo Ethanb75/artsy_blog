@@ -37,3 +37,8 @@ img {
   width: 80%;
   height: auto;
 }
+@media (max-width: 750px) { 
+  .content-show {
+    padding-right: .8rem;
+  }
+}
