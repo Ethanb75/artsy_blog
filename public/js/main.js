@@ -139,12 +139,17 @@ function colorPage (color1, color2) {
         let message = event.target.children[3].value;
         let name = event.target.children[1].value;
 
-        //set to null
-        event.target.children[3].value = '';
-        event.target.children[1].value = '';
+        if (message.length > 0) {
+            //set to null
+            event.target.children[3].value = '';
+            event.target.children[1].value = '';
 
+           return postMessage(message, name); 
+        } else {
+            // if no message, flash 'message needed'
 
-        return postMessage(message, name);
+        }
+        
     }
 
 
