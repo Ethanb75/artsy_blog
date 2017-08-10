@@ -2,6 +2,9 @@
 //----------------------
 //add glare if click on contact and already at page bottom
 //
+
+"use strict"
+
 let aboutCloseIcon = document.querySelector('.about > i'),
                cnt = document.getElementById('cnt'),
       cntCloseIcon = document.querySelector('#cnt > i'),
@@ -133,7 +136,7 @@ function colorPage (color1, color2) {
     
 
     //message form listener
-    messageForm.onsubmit = (event) => {
+    messageForm.onsubmit = event => {
         event.preventDefault();
 
         let message = event.target.children[3].value;

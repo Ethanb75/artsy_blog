@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/show.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- font awesome -->
+        <script src="https://use.fontawesome.com/bc78f54eee.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -49,11 +51,29 @@
                     </article>
                     <hr>
                     <p>
-                        by <a href="https://github.com/Ethanb75">Ethan</a>
+                        by <a href="https://github.com/Ethanb75">Ethan</a>.
                     </p>
                 </div>
                
             </div>
+
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11 col-sm-offset-2 col-sm-8 ratingWrap">
+                    <div class="happy">
+                        <i id="smile" class="fa fa-smile-o fa-4x" aria-hidden="true"></i>
+                        <span>
+                            <%= data.smiles %>
+                        </span>
+                    </div>
+                    <div class="sad">
+                        <i id="frown" class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+                        <span>
+                            <%= data.frowns %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="btn-group btn-group-justified" role="group" aria-label="..." style="margin-top: 4rem; overflow: hidden">
                     <a class="btn btn-default big" role="button" href="/"><< Go Back</a>
